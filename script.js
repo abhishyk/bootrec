@@ -30,7 +30,7 @@ document.getElementById('footer-container').innerHTML = `
             <div class="column">
             <h3>Bootrec Tool's</h3>
             <ul class="link-list">
-                <li><a href="#">Font Generator</a></li>
+                <li><a href="/tools/fancy-font-generator.html">Font Generator</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact Us</a></li>
