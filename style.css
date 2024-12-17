@@ -33,6 +33,10 @@ body {
     font-weight: bold;
     letter-spacing: 3px;
 }
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+ }
 
 .navbar .hamburger-menu {
     display: none;
@@ -81,7 +85,7 @@ body {
 }
 
 .content {
-    padding: 50px 20px;
+    padding: 20px 5px 50px;
     max-width: 1200px;
     margin: 0 auto;
     flex-grow: 1;
@@ -96,11 +100,38 @@ body {
     margin-bottom: 20px;
     font-size: 18px;
 }
+.article{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+.post-header {
+    border-bottom: 2px solid #ddd;      
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #777;
+}
+
+.post-meta span {
+    margin-right: 15px;}
+    
+
 
 .footer {
     background-color: #222;
     color: #ddd;
-    text-align: center;
     padding: 40px 20px;
     font-size: 14px;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
@@ -144,22 +175,6 @@ body {
 }
 
 .footer .column a:hover {
-    color: #fff;
+    color: #0be6c1;
 }
 
-.footer .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.footer .social-icons a {
-    color: #bbb;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.footer .social-icons a:hover {
-    color: #fff;
-}

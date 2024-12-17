@@ -3,10 +3,10 @@
 // Navbar HTML content
 document.getElementById('navbar-container').innerHTML = `
     <div class="navbar">
-        <div class="logo">Bootrec</div>
+        <div class="logo"><a href="/index.html">Bootrec</a></div>
         <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
         <div class="menu" id="mobile-menu">
-            <a href="/index.html">Blog</a>
+            <a href="/blog.html">Blog</a>
             <a href="/about.html">About</a>
             <a href="/contact.html">Contact</a>
         </div>
@@ -17,24 +17,36 @@ document.getElementById('navbar-container').innerHTML = `
 document.getElementById('footer-container').innerHTML = `
     <footer class="footer">
         <div class="row">
+           <div class="column">
+            <h3>Bootrec Menu</h3>
+            <ul class="link-list">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About us</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
             <div class="column">
-                <h3>About Us</h3>
-                <p>We are committed to delivering exceptional services with a focus on quality and customer satisfaction.</p>
-            </div>
-            <div class="column">
-                <h3>Contact</h3>
-                <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
-                <p>Phone: +123 456 7890</p>
-                <p>Address: 123 Business Street, City</p>
-            </div>
-            <div class="column">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
+            <h3>Bootrec Tool's</h3>
+            <ul class="link-list">
+                <li><a href="#">Font Generator</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+          <div class="column">
+            <h3>Useful Links</h3>
+            <ul class="link-list">
+               <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic" target="_blank">W3school HTML Editor</a></li>
+                <li><a href="https://github.com" target="_blank">Github.com</a></li>
+                <li><a href="https://getintopc.com" target="_blank">All Free Software</a></li>
+                <li><a href="https://www.sejda.com/pdf-editor" target="_blank">Real time PDF Editor</a></li>
+                <li><a href="https://www.photopea.com" target="_blank">Online Photoshop</a></li>
+            </ul>
+        </div>
         </div>
     </footer>
 `;

@@ -20,21 +20,103 @@
         <!-- Scripts (deferred) -->
         <script src="scripts.js" defer></script>
     </head>
+    <style>.aboutcontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+    #funnyButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 2.5rem;
+        width: 7rem;
+        cursor: pointer;
+        position: absolute;
+    }
+</style>
+<style>
+#overlay {
+position: fixed;
+display: none;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5);
+z-index: 2;
+cursor: pointer;
+text-align: center;
+z-index: 9999;
+}
+
+#overlay h1 {
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+color: white;
+font-size: 2em;
+}
+image{
+margin: 80px 10px;
+
+}</style>
 <body>
+    <div id="overlay" onclick="off()">
+        <div class="image">
+          <img src="/image/aboutbootrec.png" alt="Girl in a jacket" style="margin-top: 80px">
+        </div>
+      </div>
     <!-- navbar -->
     <div class="header-wrapper">
     <div id="navbar-container"></div>
 </div>
     <div class="content">
-        <h2 style="text-align: center;"><br /></h2>
-        <h2 style="text-align: center;"><span style="font-family: verdana;">Welcome to Bootrec!&nbsp;</span></h2><div><span style="font-family: verdana;"><br /></span></div>
-        <div><span style="font-family: verdana;"><br /></span></div>
-<span style="font-family: verdana;">&nbsp;At Bootrec, we tell engaging stories that guide you through the ups and downs of troubleshooting computer and mobile issues. Each article weaves real-life experiences with practical solutions, making it easier for you to relate to and understand common tech challenges.</span><span style="font-family: verdana;"><br /> </span><br />
+        <div class="aboutcontainer">
+            <button onclick="on()" id="funnyButton">Click here</button>
+        </div>
     </div>
 
     <!-- footer -->
     <div id="footer-container"></div>
-
+    <script>
+        function on() {
+          document.getElementById("overlay").style.display = "block";
+        }
+        
+        function off() {
+          document.getElementById("overlay").style.display = "none";
+        }
+        </script>
+            <script>
+                const button = document.getElementById('funnyButton');
+                const container = document.querySelector('.aboutcontainer');
+        
+                const moveButton = () => { 
+                    const containerRect = container.getBoundingClientRect();
+                    const buttonWidth = button.offsetWidth;
+                    const buttonHeight = button.offsetHeight;
+        
+                    const x = Math.random() * (containerRect.width - buttonWidth);
+                    const y = Math.random() * (containerRect.height - buttonHeight);
+        
+                    button.style.left = `${x}px`;
+                    button.style.top = `${y}px`;
+                };
+        
+                button.addEventListener('mouseover', moveButton);
+            </script>
     <script src="script.js"></script> 
 </body>
 </html>

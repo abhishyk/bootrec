@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        <meta name="description" content="Discover expert solutions for common tech headaches! Our comprehensive troubleshooting guides offer step-by-step fixes for issues on your computer and mobile devices. From software glitches to hardware malfunctions, we've got you covered. troubleshooting, tech issues, computer problems, mobile problems, solutions, guides, step-by-step, software, hardware">
+        <meta name="author" content="Bootrec">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <title>Fancy Font Generator</title>
+        <!-- Social Sharing Metadata -->
+        <meta property="og:title" content="Bootrec">
+        <meta property="og:description" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <meta property="og:image" content="URL to your thumbnail image">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../style.css">
+        <!-- Scripts (deferred) -->
+        <script src="scripts.js" defer></script>
+        <style>
+            /* Create two equal columns that float next to each other */
+            .fancyfontrow {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+             
+            }
+            
+            .fancyfontcolumn {
+              flex: 1;
+              padding: 20px;
+              height: 320px;
+              background-color: #fff;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              border: 1px solid #bdbdbd;
+              min-width: 300px;
+              max-width: 100%;
+            }
+            
+            /* Make the second column scrollable */
+            .fancyfontcolumn:nth-child(2) {
+              max-height: 400px; /* Set a maximum height for scrolling */
+              overflow-y: auto; /* Enables vertical scrolling */
+            }
+            
+            /* Make the textarea fill the entire column */
+            textarea {
+              width: 100%;
+              height: 100%;
+              padding: 10px;
+              font-size: 16px;
+              margin-bottom: 0px;
+              resize: none;
+              border: none; /* Removes the border */
+              background-color: transparent; /* Optional: makes background blend */
+              outline: none; /* Removes focus border outline */
+            }
+            
+            /* Result styling */
+            .result {
+              display: none; /* Initially hide results */
+              margin-bottom: 10px;
+              font-family: 'Courier New', Courier, monospace;
+              word-wrap: break-word;
+              color: black;
+            }
+            
+            .result-content {
+              white-space: pre-wrap;
+             
+              font-size: 24px;
+            }
+            
+            button {
+              padding: 5px;
+              margin-top: 10px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 0.4rem;
+              cursor: pointer;
+            }
+            
+            button:hover {
+              background-color: #45a049;
+            }
+            
+            /* Responsive layout - stack the columns on small screens */
+            @media screen and (max-width: 768px) {
+              .column {
+                max-width: 100%; /* Ensure columns are full-width on smaller screens */
+                margin-bottom: 20px;
+              }
+            }
+            
+            /* For mobile screens */
+            @media screen and (max-width: 480px) {
+             
+              .column:first-child {
+                height: 100px; /* Set the height of the first column to 150px on mobile */
+              }
+              textarea {
+                font-size: 14px; /* Reduce font size for better readability */
+              }
+            }
+            </style>
+            
+    </head>
+<body>
+    <!-- navbar -->
+    <div class="header-wrapper">
+    <div id="navbar-container"></div>
+</div>
+    <div class="content">
+        <div class="article">
+        <div class="post-header">
+            <h1 class="post-title">How to Learn Web Development</h1>
+            <div class="post-meta">
+                <span>Date: December 15, 2024</span>
+                <span>Author: Abhishek Haldkar</span>
+            </div>
+        </div>
+        <div class="fancyfontrow">
+            <div class="fancyfontcolumn">
+              <textarea id="inputText" placeholder="Type your text here..."  oninput="convertToFancyFont()"></textarea>
+            </div>
+            
+            <div class="fancyfontcolumn">
+              <div class="result-container">
+                <div class="result" id="boldCharContainer">
+                  <strong>Bold Char:</strong>
+                  <div class="result-content" id="boldCharResult"></div>
+                  <button id="boldCharCopyButton" onclick="copyToClipboard('boldCharResult', 'boldCharCopyButton')">Copy</button>
+                </div> 
+                <div class="result" id="cursiveCharContainer">
+                  <strong>Cursive Bold:</strong>
+                  <div class="result-content" id="cursiveCharResult"></div>
+                  <button id="cursiveCharCopyButton" onclick="copyToClipboard('cursiveCharResult', 'cursiveCharCopyButton')">Copy</button>
+                </div>
+                <div class="result" id="cursiveboldContainer">
+                  <strong> cursive:</strong>
+                  <div class="result-content" id="cursiveboldResult"></div>
+                  <button id="cursiveboldCopyButton" onclick="copyToClipboard('cursiveboldResult', 'cursiveboldCopyButton')">Copy</button>   </div>
+          
+                <div class="result" id="boldItalicContainer">
+                  <strong> boldItalic:</strong>
+                  <div class="result-content" id="boldItalicResult"></div>
+                  <button id="boldItalicCopyButton" onclick="copyToClipboard('boldItalicResult', 'boldItalicCopyButton')">Copy</button>   </div>
+          
+                <div class="result" id="FilledSquareContainer">
+                  <strong>Filled Square:</strong>
+                  <div class="result-content" id="FilledSquareResult"></div>
+                  <button id="FilledSquareCopyButton" onclick="copyToClipboard('FilledSquareResult', 'FilledSquareCopyButton')">Copy</button>
+                </div>
+          <div class="result" id="oldEnglishCharContainer">
+                  <strong>Old English:</strong>
+                  <div class="result-content" id="oldEnglishCharResult"></div>
+                  <button id="oldEnglishCharCopyButton" onclick="copyToClipboard('oldEnglishCharResult', 'oldEnglishCharCopyButton')">Copy</button>   </div>
+          <div class="result" id="wideTextCharContainer">
+                  <strong>Wide Text:</strong>
+                  <div class="result-content" id="wideTextCharResult"></div>
+                  <button id="wideTextCharCopyButton" onclick="copyToClipboard('wideTextCharResult', 'wideTextCharCopyButton')">Copy</button>   </div>
+          <div class="result" id="squiggle5CharContainer">
+                  <strong> Squiggle:</strong>
+                  <div class="result-content" id="squiggle5CharResult"></div>
+                  <button id="squiggle5CharCopyButton" onclick="copyToClipboard('squiggle5CharResult', 'squiggle5CharCopyButton')">Copy</button>   </div>
+          <div class="result" id="EmojiContainer">
+                  <strong> Emoji:</strong>
+                  <div class="result-content" id="EmojiResult"></div>
+                  <button id="EmojiCopyButton" onclick="copyToClipboard('EmojiResult', 'EmojiCopyButton')">Copy</button></div>
+                <div class="result" id="medievalContainer">
+                  <strong> medieval:</strong>
+                  <div class="result-content" id="medievalResult"></div>
+                  <button id="medievalCopyButton" onclick="copyToClipboard('medievalResult', 'medievalCopyButton')">Copy</button> </div>
+           <div class="result" id="subscriptContainer">
+                  <strong> SubScript:</strong>
+                  <div class="result-content" id="subscriptResult"></div>
+                  <button id="subscriptCopyButton" onclick="copyToClipboard('subscriptResult', 'subscriptCopyButton')">Copy</button></div>
+          <div class="result" id="superscriptContainer">
+                  <strong> superscript:</strong>
+                  <div class="result-content" id="superscriptResult"></div>
+                  <button id="superscriptCopyButton" onclick="copyToClipboard('superscriptResult', 'superscriptCopyButton')">Copy</button>   </div>
+          <div class="result" id="mirrorContainer">
+                  <strong> mirror:</strong>
+                  <div class="result-content" id="mirrorResult"></div>
+                  <button id="mirrorCopyButton" onclick="copyToClipboard('mirrorResult', 'mirrorCopyButton')">Copy</button></div>
+                
+                <div class="result" id="symbolsContainer">
+                  <strong> symbols:</strong>
+                  <div class="result-content" id="symbolsResult"></div>
+                  <button id="symbolsCopyButton" onclick="copyToClipboard('symbolsResult', 'symbolsCopyButton')">Copy</button>   </div>
+          <div class="result" id="squiggle2Container">
+                  <strong> squiggle2:</strong>
+                  <div class="result-content" id="squiggle2Result"></div>
+                  <button id="squiggle2CopyButton" onclick="copyToClipboard('squiggle2Result', 'squiggle2CopyButton')">Copy</button>   </div>
+          
+              </div></div></div>
+          <div style="text-align: center;"><span style="font-family: verdana;"><br /></span></div><div style="text-align: center;"><span style="font-family: verdana;">
+          Bold font generator copy and paste | Cursive font generator copy and paste |
+          Filled Square font generator copy and paste | Old English font generator |</span></div><div style="text-align: center;"><span style="font-family: verdana;">&nbsp;Wide Text font generator|&nbsp;</span></div><div style="text-align: center;"><span style="font-family: verdana;">Squiggle font generator  | medieval font generator 
+          |SubScript generator | superscript generator</span></div>
+        </div> </div>
+
+    <!-- footer -->
+    <div id="footer-container"></div>
+
+    <script src="../script.js"></script>
+    <script src="../tools/ffgscript.js"></script>
+</body>
+</html>
