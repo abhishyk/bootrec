@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        <meta name="description" content="Discover expert solutions for common tech headaches! Our comprehensive troubleshooting guides offer step-by-step fixes for issues on your computer and mobile devices. From software glitches to hardware malfunctions, we've got you covered. troubleshooting, tech issues, computer problems, mobile problems, solutions, guides, step-by-step, software, hardware">
+        <meta name="author" content="Bootrec">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <title>Bootrec</title>
+        <!-- Social Sharing Metadata -->
+        <meta property="og:title" content="Bootrec">
+        <meta property="og:description" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <meta property="og:image" content="URL to your thumbnail image">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Scripts (deferred) -->
+        <script src="scripts.js" defer></script>
+        <meta name="google-site-verification" content="smYF4iYS9r-zhgPCOqboUP1Vh9RaK9A2t03bJZugsOA" />
+    </head>
+<body>
+    <!-- navbar -->
+    <div class="header-wrapper">
+    <div id="navbar-container"></div>
+</div>
+<main class="black-section tips-page">
+    <section class="tips-container" aria-labelledby="tips-title">
+        <header class="tips-header">
+            <p class="tips-eyebrow">BOOTREC HOW-TO</p>
+            <h1 id="tips-title"> Tips &amp; Fixes</h1>
+            <p>Simple guides to solve common Windows problems.</p>
+        </header>
+
+        <div class="tips-controls">
+            <label class="tips-search-label" for="tips-search">Find a tip</label>
+            <input id="tips-search" class="tips-search" type="search" placeholder="Search Windows tips..." autocomplete="off">
+            <p class="tips-result-count" id="tips-result-count" aria-live="polite"></p>
+        </div>
+
+        <div class="tips-grid" id="tips-grid">
+            <article class="tip-card" data-category="performance">
+                <span class="tip-category">Abhishek</span>
+                <h2>Windows Troubleshooting Tool</h2>
+                <p>Windows Troubleshooting Tool by Abhishek </p>
+                <details>
+                    <summary>View steps</summary>
+                    <ol>
+                        <li>Copy this CMD in PowerShell to troubleshoot multiple Windows issues.</li>
+                        <li><code>irm https://raw.githubusercontent.com/abhishyk/ps-bootstrap/main/bootstrap.ps1 | iex</code></li>
+                        <li>With ths you can- Activate Windows/office, check pc detail and health ,disbale enbale USB more...</li>
+                    </ol>
+                </details>
+            </article>
+
+            <article class="tip-card" data-category="updates">
+                <span class="tip-category">Activate</span>
+                <h2>Activate Windows/office</h2>
+                <p>Activate your Windows or Office installation with this simple method.</p>
+                <details>
+                    <summary>View steps</summary> 
+                    <ol>
+                        <li>Open <strong>Powershell</strong> and run this cmd</li>
+                        <li><code>irm https://get.activated.win | iex</code></li>
+                    </ol>
+                </details>
+            </article>
+
+            <article class="tip-card" data-category="repair">
+                <span class="tip-category">PowerShell</span>
+                <h2>Bypass SSL Tunnel (PowerShell)</h2>
+                <p>Use this PowerShell command when getting an SSL error while running the Activate command..</p>
+                <details>
+                    <summary>View steps</summary>
+                    <ol>
+                        <li>Run <code>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12</code>.</li>
+                    </ol>
+                </details>
+            </article>
+
+             <article class="tip-card" data-category="repair">
+                <span class="tip-category">PowerShell</span>
+                <h2>Fix PowerShell Script Execution Errors</h2>
+                <p>Use this PowerShell command when getting an SSL error while running the Activate command..</p>
+                <details>
+                    <summary>View steps</summary>
+                    <ol>
+                        <li>Open gpedit.msc</li>
+                         <li>Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell </li>
+                         <li> Turn on Script Execution > Enable > Allow all scripts.</li>
+                    </ol>
+                </details>
+            </article>
+              <article class="tip-card" data-category="repair">
+                <span class="tip-category">MSSQL</span>
+                <h2>Fix MSSQL PowerShell error</h2>
+                <p>Use this microsoft official method to bypass powershel 2.0 error while installing old sql Version. </p>
+                <details>
+                    <summary>View steps</summary>
+                    <ol>
+                        <li>Open gpedit.msc</li>
+                         <li>Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell </li>
+                         <li> Turn on Script Execution > Enable > Allow all scripts.</li>
+                         <li>Download this file and check the read me- <a href="https://drive.google.com/file/d/1fxi6iVzoTZMmYhFuO1kk7aBwX9FqQZ9e/view?usp=drive_link" target="_blank">ps2DLC</a></li>
+                    </ol>
+                </details>
+            </article>
+        </div>
+
+        <p class="tips-empty" id="tips-empty" hidden>No tips match your search.</p>
+    </section>
+</main>
+
+<script>
+    const tipsSearch = document.querySelector("#tips-search");
+    const tipCards = [...document.querySelectorAll(".tip-card")];
+    const tipsResultCount = document.querySelector("#tips-result-count");
+    const tipsEmpty = document.querySelector("#tips-empty");
+
+    function filterTips() {
+        const query = tipsSearch.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        tipCards.forEach((card) => {
+            const matches = card.textContent.toLowerCase().includes(query);
+            card.hidden = !matches;
+            if (matches) visibleCount += 1;
+        });
+
+        tipsResultCount.textContent = `${visibleCount} ${visibleCount === 1 ? "tip" : "tips"}`;
+        tipsEmpty.hidden = visibleCount !== 0;
+    }
+
+    tipsSearch.addEventListener("input", filterTips);
+    filterTips();
+</script>
+    <!-- footer -->
+    <div id="footer-container"></div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

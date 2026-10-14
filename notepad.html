@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        <meta name="description" content="Discover expert solutions for common tech headaches! Our comprehensive troubleshooting guides offer step-by-step fixes for issues on your computer and mobile devices. From software glitches to hardware malfunctions, we've got you covered. troubleshooting, tech issues, computer problems, mobile problems, solutions, guides, step-by-step, software, hardware">
+        <meta name="author" content="Bootrec">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <title>Bootrec</title>
+        <!-- Social Sharing Metadata -->
+        <meta property="og:title" content="Bootrec">
+        <meta property="og:description" content="bootrec,tips and trick,computer,hacking,tools,html tools,free source code,eduquity,windows tool,bootrec.exe">
+        <meta property="og:image" content="URL to your thumbnail image">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Scripts (deferred) -->
+        <script src="scripts.js" defer></script>
+        <meta name="google-site-verification" content="smYF4iYS9r-zhgPCOqboUP1Vh9RaK9A2t03bJZugsOA" />
+    </head>
+<body>
+    <!-- navbar -->
+    <div class="header-wrapper">
+    <div id="navbar-container"></div>
+</div>
+    <!-- Replace ONLY <div class="black-section"></div> in index.html with this -->
+<!-- ===== Notepad section: paste this in place of <div class="black-section">...</div> ===== -->
+<style>
+  .np-wrap{
+    --bg:#ffffff; --paper:#ffffff; --side:#f6f7f8; --ink:#1f2328; --muted:#6b7280;
+    --line:#e1e4e8; --accent:#2f5d50; --danger:#c0392b;
+    position:relative; height:100vh; min-height:520px; display:flex; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Times New Roman",serif; box-sizing:border-box;
+  }
+  .np-wrap *{box-sizing:border-box}
+  .np-wrap .np-hidden{display:none!important}
+  .np-wrap button,.np-wrap input,.np-wrap textarea{font:inherit;color:inherit}
+  .np-wrap button{background:var(--accent);color:#fff;border:0;padding:.45rem .8rem;border-radius:4px;cursor:pointer}
+  .np-wrap button.np-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .np-wrap :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .np-wrap input{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:.55rem .7rem;width:100%}
+
+  .np-login{flex:1;display:grid;place-items:center;padding:1rem}
+  .np-card{background:var(--paper);border:1px solid var(--line);padding:2rem;width:min(360px,100%);border-radius:6px}
+  .np-card h2{margin:0 0 1rem;font-size:1.4rem}
+  .np-card label{display:block;margin:.8rem 0 .3rem;color:var(--muted);font-size:.9rem}
+  .np-card button{width:100%;margin-top:1.2rem;padding:.6rem}
+  .np-err{color:var(--danger);min-height:1.3em;margin:.8rem 0 0;font-size:.9rem}
+
+  .np-app{flex:1;display:flex;min-width:0;min-height:0}
+  .np-side{width:200px;flex:none;background:var(--side);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+  .np-tabs{flex:1;overflow-y:auto;padding:.5rem}
+  .np-tab{display:flex;align-items:center;gap:.2rem;border-left:3px solid transparent;border-radius:3px}
+  .np-tab.on{background:var(--paper);border-left-color:var(--accent)}
+  .np-tab .np-name{flex:1;min-width:0;text-align:left;background:none;color:var(--ink);padding:.5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .np-tab .np-x{background:none;color:var(--muted);padding:.2rem .45rem}
+  .np-side-actions{display:flex;flex-direction:column;gap:.4rem;padding:.6rem;border-top:1px solid var(--line)}
+  .np-main{flex:1;display:flex;flex-direction:column;min-width:0;padding:.8rem 1rem 1rem}
+  .np-bar{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
+  .np-title{font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .np-status{color:var(--muted);font-size:.9rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .np-pad{flex:1;width:100%;resize:none;border:1px solid var(--line);border-radius:4px;background:var(--paper);padding:1.2rem 1.4rem;line-height:1.7;font-size:1.05rem;font-family:"Courier New",monospace}
+
+  @media (max-width:640px){
+    .np-app{flex-direction:column}
+    .np-side{width:100%;flex-direction:row;border-right:0;border-bottom:1px solid var(--line)}
+    .np-tabs{display:flex;overflow-x:auto;overflow-y:hidden}
+    .np-tab{flex:none;max-width:150px}
+    .np-side-actions{flex-direction:row;border-top:0;border-left:1px solid var(--line)}
+  }
+</style>
+
+<div class="np-wrap" id="np">
+  <div class="np-login" id="npLogin">
+    <div class="np-card">
+      <h2>Sign in</h2>
+      <label for="npU">Username</label>
+      <input id="npU" autocomplete="username">
+      <label for="npP">Password</label>
+      <input id="npP" type="password" autocomplete="current-password">
+      <button id="npLoginBtn">Sign in</button>
+      <p class="np-err" id="npErr" role="alert"></p>
+    </div>
+  </div>
+
+  <div class="np-app np-hidden" id="npApp">
+    <aside class="np-side">
+      <div class="np-tabs" id="npTabs" role="tablist" aria-label="Notes"></div>
+      <div class="np-side-actions">
+        <button id="npAdd">+ New tab</button>
+        <button class="np-ghost" id="npOut">Sign out</button>
+      </div>
+    </aside>
+    <section class="np-main">
+      <div class="np-bar">
+        <span class="np-title" id="npTitle"></span>
+        <span class="np-status" id="npStatus"></span>
+        <button id="npSave" disabled>Save</button>
+      </div>
+      <textarea class="np-pad" id="npPad" spellcheck="false" disabled placeholder="Yahan likho..."></textarea>
+    </section>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ====== SETTINGS: apna Apps Script web app URL yahan paste karo ====== */
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzDW4jYJY0FX8PwtYgKBtylqE_oU5gSGfh9vNytYBUn15OB_-IYzORc5jyls9HRAgZb/exec";
+  /* ===================================================================== */
+
+  const MARK = "⟦TAB⟧ ";          // doc ke andar har tab ki shuruaat isse hoti hai
+  const $ = id => document.getElementById(id);
+  let creds = JSON.parse(sessionStorage.getItem("npCreds") || "null");
+  let tabs = [], active = null, dirty = false, loaded = false, timer = null, n = 0;
+  const uid = () => "t" + (++n);
+  const status = t => $("npStatus").textContent = t;
+
+  async function call(p){
+    const r = await fetch(SCRIPT_URL, { method:"POST", body: JSON.stringify({ user:creds.user, pass:creds.pass, ...p }) });
+    const d = await r.json();
+    if(!d.ok) throw new Error(d.error || "Request failed");
+    return d;
+  }
+
+  /* ---------- doc text <-> tabs ---------- */
+  function parse(text){
+    const out = []; let cur = null;
+    for(const ln of text.split("\n")){
+      if(ln.startsWith(MARK)){ cur = { id:uid(), name:ln.slice(MARK.length).trim() || "Tab", lines:[] }; out.push(cur); }
+      else{
+        if(!cur){ if(!ln.trim()) continue; cur = { id:uid(), name:"Tab 1", lines:[] }; out.push(cur); }
+        cur.lines.push(ln);
+      }
+    }
+    return out.map(t => ({ id:t.id, name:t.name, text:t.lines.join("\n") }));
+  }
+  const serialize = () => tabs.map(t => MARK + t.name + "\n" + t.text.replace(/^⟦TAB⟧/gm, "⟦TAB ⟧")).join("\n");
+
+  /* ---------- login ---------- */
+  async function login(){
+    $("npErr").textContent = "";
+    creds = { user:$("npU").value, pass:$("npP").value };
+    try{ await call({ action:"login" }); sessionStorage.setItem("npCreds", JSON.stringify(creds)); start(); }
+    catch(e){ creds = null; $("npErr").textContent = e.message; }
+  }
+  $("npLoginBtn").onclick = login;
+  ["npU","npP"].forEach(i => $(i).addEventListener("keydown", e => { if(e.key === "Enter") login(); }));
+  $("npOut").onclick = () => {
+    if(dirty && !confirm("Unsaved changes hain. Sign out karein?")) return;
+    sessionStorage.removeItem("npCreds"); location.reload();
+  };
+  if(creds) start();
+
+  async function start(){
+    $("npLogin").classList.add("np-hidden"); $("npApp").classList.remove("np-hidden");
+    status("Doc load ho raha hai...");
+    try{
+      const d = await call({ action:"load" });
+      tabs = parse(d.text);
+      if(!tabs.length) tabs = [{ id:uid(), name:"Tab 1", text:"" }];
+      active = tabs[0].id; loaded = true; $("npPad").disabled = false; $("npSave").disabled = false;
+      render(); showActive(); status("");
+    }catch(e){ status("Load nahi hua: " + e.message); }
+  }
+
+  /* ---------- tabs ---------- */
+  const cur = () => tabs.find(t => t.id === active);
+  function render(){
+    const box = $("npTabs"); box.innerHTML = "";
+    tabs.forEach(t => {
+      const row = document.createElement("div"); row.className = "np-tab" + (t.id === active ? " on" : "");
+      const b = document.createElement("button"); b.className = "np-name"; b.setAttribute("role","tab");
+      b.setAttribute("aria-selected", t.id === active); b.title = "Double-click: rename"; b.textContent = t.name;
+      b.onclick = () => { active = t.id; render(); showActive(); }; b.ondblclick = () => rename(t);
+      const x = document.createElement("button"); x.className = "np-x"; x.textContent = "×"; x.setAttribute("aria-label", "Delete " + t.name);
+      x.onclick = () => del(t); row.append(b, x); box.append(row);
+    });
+  }
+  function showActive(){ const t = cur(); $("npTitle").textContent = t ? t.name : ""; $("npPad").value = t ? t.text : ""; }
+  function rename(t){
+    const nm = prompt("Naya naam:", t.name); if(!nm || !nm.trim()) return;
+    t.name = nm.replace(/\s+/g, " ").trim(); render(); showActive(); changed();
+  }
+  function del(t){
+    if(tabs.length === 1) return status("Kam se kam ek tab rehna chahiye.");
+    if(!confirm('"' + t.name + '" tab aur uska poora text delete ho jayega. Pakka?')) return;
+    const i = tabs.indexOf(t); tabs.splice(i, 1);
+    if(active === t.id) active = tabs[Math.min(i, tabs.length - 1)].id;
+    render(); showActive(); changed();
+  }
+  $("npAdd").onclick = () => {
+    if(!loaded) return;
+    const nm = prompt("Tab ka naam:", "Tab " + (tabs.length + 1)); if(!nm || !nm.trim()) return;
+    const t = { id:uid(), name:nm.replace(/\s+/g, " ").trim(), text:"" };
+    tabs.push(t); active = t.id; render(); showActive(); changed(); $("npPad").focus();
+  };
+
+  /* ---------- save (manual + auto) ---------- */
+  function changed(){ dirty = true; status("Auto-save 2 sec mein..."); clearTimeout(timer); timer = setTimeout(save, 2000); }
+  async function save(){
+    if(!loaded) return;
+    clearTimeout(timer);
+    if(!dirty){ status("Sab saved hai."); return; }
+    const sent = serialize();
+    try{
+      status("Save ho raha hai...");
+      await call({ action:"save", text:sent });
+      if(serialize() === sent) dirty = false;
+      status("Saved " + new Date().toLocaleTimeString());
+    }catch(e){ status("Save nahi hua (5 sec mein dobara): " + e.message); timer = setTimeout(save, 5000); }
+  }
+  $("npSave").onclick = save;
+  $("npPad").addEventListener("input", () => { const t = cur(); if(t){ t.text = $("npPad").value; changed(); } });
+  $("np").addEventListener("keydown", e => { if((e.ctrlKey || e.metaKey) && e.key === "s"){ e.preventDefault(); save(); } });
+  window.addEventListener("beforeunload", e => { if(dirty){ e.preventDefault(); e.returnValue = ""; } });
+})();
+</script>
+<!-- ===== end notepad section ===== -->
+   
+
+    <script src="script.js"></script> 
+</body>
+</html>
