@@ -32,6 +32,7 @@ document.getElementById('footer-container').innerHTML = `
             <ul class="link-list">
                 <li><a href="/tools/fancy-font-generator.html">Font Generator</a></li>
                 <li><a href="https://fontflip.abhishekmail841.workers.dev/">Font-Flipper</a></li>
+                <li><a href="notepad.html">Notepad</a></li>
                 <li><a href="https://dropme.pages.dev/">Dropme</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
