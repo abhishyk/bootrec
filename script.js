@@ -42,7 +42,7 @@ document.getElementById('footer-container').innerHTML = `
             <h3>Useful Links</h3>
             <ul class="link-list">
                <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic" target="_blank">W3school HTML Editor</a></li>
-                <li><a href="https://github.com" target="_blank">Github.com</a></li>
+                <li><a href="https://xagent.abhishekmail841.workers.dev" target="_blank">Xagent</a></li>
                 <li><a href="https://getintopc.com" target="_blank">All Free Software</a></li>
                 <li><a href="https://www.sejda.com/pdf-editor" target="_blank">Real time PDF Editor</a></li>
                 <li><a href="https://www.photopea.com" target="_blank">Online Photoshop</a></li>
